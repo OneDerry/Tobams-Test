@@ -1,100 +1,74 @@
-import { IoIosArrowDropright } from "react-icons/io";
+import Card1 from "../assets/Cards/Card1.svg";
+import Card2 from "../assets/Cards/Card2.svg";
+import Card3 from "../assets/Cards/Card3.svg";
+import Card4 from "../assets/Cards/Card4.svg";
+import Card5 from "../assets/Cards/Card5.svg";
+
+import { GoHeart } from "react-icons/go";
 
 export default function Cards() {
   const cards = [
     {
       id: 1,
-      name: "Outer Planning",
+      name: "Vulputate felis purus viverra morbi facilisi eget",
       desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRELAo2F8ygCnwoBKzgzgqI8CFtjagRhKv863rIx2z_1X64hSeG"
-          width={"230px"}
-        />
-      ),
+      image: <img src={Card1} />,
     },
     {
       id: 2,
-      name: "Office Building",
+      name: "Viverra morbi facilisi eget",
       desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR2TFvIPQLOi7uJbCxpIVMOKHrzJ4Ddy5ZIxA6l8XjjNzelhG7W"
-          width={"230px"}
-        />
-      ),
+      image: <img src={Card2} />,
     },
     {
       id: 3,
-      name: "Interior",
+      name: "Lorem ipsimfas dadfadkl",
       desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR2TFvIPQLOi7uJbCxpIVMOKHrzJ4Ddy5ZIxA6l8XjjNzelhG7W"
-          width={"230px"}
-        />
-      ),
+      image: <img src={Card3} width={"300px"} />,
     },
     {
       id: 4,
-      name: "Comfort",
+      name: "Dummy text baiusbdfa",
       desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcScOrqqI_V-XD_M1CbXW9dIF7zFc7ManQaXWwSqPfoAPOEv-f8Y"
-          width={"300px"}
-        />
-      ),
+      image: <img src={Card4} />,
     },
     {
       id: 5,
-      name: "Entertainment",
+      name: "this is an example text",
       desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcScOrqqI_V-XD_M1CbXW9dIF7zFc7ManQaXWwSqPfoAPOEv-f8Y"
-          width={"300px"}
-        />
-      ),
-    },
-    {
-      id: 6,
-      name: "Cultural",
-      desc: "Decor/Architecture",
-      image: (
-        <img
-          src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcScOrqqI_V-XD_M1CbXW9dIF7zFc7ManQaXWwSqPfoAPOEv-f8Y"
-          width={"300px"}
-        />
-      ),
+      image: <img src={Card5} width={"300px"} />,
     },
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full p-2 rounded-lg font-serif">
       <div className=" p-2 flex items-center flex-col justify-center  font-mono font-bold">
-        <h1 className="font-serif text-3xl">Our Featured projects</h1>
-        <p className="font-serif md:text-sm sm:text-[10px]">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus
-          omnis.
-        </p>
+        <h1 className="font-serif text-xl font-bold text-slate-400">
+          Latest live auctions
+        </h1>
       </div>
 
-      <div className="w-1/2 grid lg:grid-cols-3 sm:grid-cols-2 mx-auto gap-3">
+      <div className="w-[80%] grid grid-cols-5 mx-auto gap-2">
         {cards.map((items) => (
-          <div className="p-2 bg-[beige] shadow-md ">
+          <div className="p-2 shadow-md rounded-md">
             <div key={items.id} className="">
-              <div>{items.image}</div>
-              <div className="">
-                <div className="text-xl font-semibold leading-4
-                 mt-3 font-serif md:text-lg sm:text-[12px]">
-                  {items.name}
+              <div className="rounded-lg bg-cover">{items.image}</div>
+              <div>
+                <div className="flex items-center justify-between">
+                  <p className="text-white text-sm">{items.name}</p>
+                  <p className="text-blue-400 text-xs">3.19 ETH</p>
                 </div>
-                <div className="flex items-center justify-between text-sm mt-">
-                  <div className="font-serif md:text-sm sm:text-[10px]">{items.desc}</div>
-                  <button>
-                    <IoIosArrowDropright className=" md:text-sm sm:text-[10px]text-3xl" />
-                  </button>
+                <div>
+                  <p className="text-white">Time left</p>
+                </div>
+                <div className="flex items-center text-white">
+                  <p>
+                    <span>35</span>People are bidding
+                  </p>
+                  <p>
+                    <GoHeart />
+                    120
+                  </p>
                 </div>
               </div>
             </div>

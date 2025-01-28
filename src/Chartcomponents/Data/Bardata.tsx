@@ -58,7 +58,7 @@ export const Bardata = () => {
         <YAxis />
         <XAxis dataKey="name" />
         <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip content={<customTooltip />}/>
+        <Tooltip contentStyle={{ backgroundColor: '#4B728B', border: '1px solid #f0f0f0', boxShadow: '0 -3px 3px -3px rgba(0,0,0,0.2)' }} itemStyle={{ color: '#fff' }} />
         <Legend />
         <Bar
           dataKey="product1"
@@ -73,18 +73,18 @@ export const Bardata = () => {
   );
 };
 
-const customTooltip = ({ active, payload, label }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
-        <p className="text-medium text-lg">{label}</p>
-        <p className="text-sm text-blue-400">
-          Revenue: <span className="ml-2"> ${payload[0].value}</span>
-        </p>
-        <p className="text-sm text-blue-400">
-          Profit: <span className="ml-2"> ${payload[1].value}</span>
-        </p>
-      </div>
-    );
-  }
-};
+// const customTooltip = ({ active, payload, label }) => {
+//   if (active && payload && payload.length) {
+//     return (
+//       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+//         <p className="text-medium text-lg">{label}</p>
+//         <p className="text-sm text-blue-400">
+//           Revenue: <span className="ml-2"> ${payload[0].value}</span>
+//         </p>
+//         <p className="text-sm text-blue-400">
+//           Profit: <span className="ml-2"> ${payload[1].value}</span>
+//         </p>
+//       </div>
+//     );
+//   }
+// };

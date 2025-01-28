@@ -6,3 +6,8 @@
 html{
     scroll-behavior: smooth;
 }
+
+
+*{
+    background-color: #0E1028;
+}

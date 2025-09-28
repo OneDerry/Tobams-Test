@@ -66,43 +66,51 @@ const Times = [
 export default function Home() {
   return (
     <main id="main" className="bg-primary font-sora">
-      <div className="h-screen">
-        <div className="flex flex-col mt-20 md:mt-56 items-center justify-center">
-          <div className="py-3">
+      <div className="min-h-screen">
+        <div className="flex flex-col mt-16 sm:mt-20 md:mt-32 lg:mt-56 items-center justify-center px-4">
+          <div className="py-3 w-full max-w-4xl">
             <div className="flex items-center justify-center">
-              <p className="text-slate-400 text-sm md:text-base">
+              <p className="text-slate-400 text-xs sm:text-sm md:text-base">
                 NON FUNGIBLE TOKENS
               </p>
             </div>
             <div>
-              <div className="text-2xl flex flex-col items-center text-wrap text-white w-[90%] md:w-[700px] font-bold md:text-3xl lg:text-7xl sm:text-[30px]">
-                <p className="flex items-center gap-2">
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-5xl xl:text-7xl flex flex-col items-center text-wrap text-white w-full font-bold">
+                <p className="flex items-center gap-2 text-center">
                   A new NFT
                   <span className="inline-flex items-center">
-                    <img src={C} alt="" className="h-6 w-6 md:h-8 md:w-8" />
+                    <img
+                      src={C}
+                      alt=""
+                      className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"
+                    />
                   </span>
                 </p>
-                <p className="flex items-center gap-2">
+                <p className="flex items-center gap-2 text-center">
                   <span className="inline-flex items-center">
-                    <img src={DC} alt="" className="h-6 w-6 md:h-8 md:w-8" />
+                    <img
+                      src={DC}
+                      alt=""
+                      className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8"
+                    />
                   </span>
                   experience
                 </p>
               </div>
             </div>
             <div className="flex items-center justify-center">
-              <p className="text-lg mt-4 text-slate-400 md:text-sm lg:text-xl sm:text-[13px]">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mt-4 text-slate-400 text-center">
                 Discover, collect and sell
               </p>
             </div>
-            <div className="mt-5">
+            <div className="mt-5 w-full max-w-2xl mx-auto">
               <Formik initialValues={{}} onSubmit={() => {}}>
                 <Form>
-                  <div className="flex items-center justify-between p-2 bg-white rounded-xl">
+                  <div className="flex flex-col sm:flex-row items-center justify-between p-2 bg-white rounded-xl gap-2">
                     <Field
                       type="text"
                       name="userId"
-                      className={`rounded-lg p-2 focus:outline-none bg-white w-full md:w-60`}
+                      className="rounded-lg p-2 focus:outline-none bg-white w-full sm:flex-1"
                       placeholder="Items, collections and creators"
                     />
                     <ErrorMessage
@@ -110,10 +118,10 @@ export default function Home() {
                       component="span"
                       className="text-red-500 text-xs p-1"
                     />
-                    <div className="flex items-center border-l-2 border-black h-8 p-2 gap-5 pl-5">
+                    <div className="hidden sm:flex items-center border-l-2 border-black h-8 p-2 gap-2 pl-3 text-sm">
                       Category <RiArrowDownSLine />
                     </div>
-                    <div>
+                    <div className="flex items-center justify-center w-full sm:w-auto">
                       <LiaSearchSolid size={20} />
                     </div>
                   </div>
@@ -122,52 +130,53 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-5 w-[30%] mx-auto mt-10 md:mt-48">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-center gap-3 sm:gap-5 w-full max-w-2xl mx-auto mt-8 sm:mt-10 md:mt-48 px-4">
           <div className="flex items-center justify-center">
-            <img src={ritter} alt="ritter" className="h-8" />
+            <img src={ritter} alt="ritter" className="h-6 sm:h-8" />
           </div>
           <div className="flex items-center justify-center">
-            <img src={nike} alt="nike" className="h-8" />
+            <img src={nike} alt="nike" className="h-6 sm:h-8" />
           </div>
           <div className="flex items-center justify-center">
-            <img src={adidas} alt="adidas" className="h-8" />
+            <img src={adidas} alt="adidas" className="h-6 sm:h-8" />
           </div>
           <div className="flex items-center justify-center">
-            <img src={holland} alt="new holland" className="h-8" />
+            <img src={holland} alt="new holland" className="h-6 sm:h-8" />
           </div>
         </div>
-        <div className="absolute bottom-[700px] left-[10%] md:left-[200px]">
-          <img src={Nft2} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        {/* NFT floating elements - hidden on mobile, visible on larger screens */}
+        <div className="hidden lg:block absolute bottom-[700px] left-[10%] xl:left-[200px]">
+          <img src={Nft2} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             1.3 ETH
           </p>
         </div>
-        <div className="absolute bottom-[200px] left-[75%] transform -translate-x-1/2">
-          <img src={Nft3} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        <div className="hidden lg:block absolute bottom-[200px] left-[75%] transform -translate-x-1/2">
+          <img src={Nft3} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             1.9 ETH
           </p>
         </div>
-        <div className="md:absolute md:bottom-[300px]  transform md:-translate-x-1/2">
-          <img src={Nft1} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        <div className="hidden lg:block absolute bottom-[300px] transform -translate-x-1/2">
+          <img src={Nft1} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             1.3 ETH
           </p>
         </div>
-        <div className="md:absolute md:bottom-[450px] left-[90%] transform -translate-x-1/2">
-          <img src={Nft4} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        <div className="hidden lg:block absolute bottom-[450px] left-[90%] transform -translate-x-1/2">
+          <img src={Nft4} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             1.2 ETH
           </p>
         </div>
-        <div className="md:absolute md:bottom-[700px] left-[80%] transform -translate-x-1/2">
-          <img src={Nft5} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        <div className="hidden lg:block absolute bottom-[700px] left-[80%] transform -translate-x-1/2">
+          <img src={Nft5} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             0.443 ETH
           </p>
         </div>
-        <div className="md:absolute md:bottom-[420px] left-[20%] md:left-[400px] transform -translate-x-1/2">
-          <img src={Nft6} alt="" className="h-9 w-14 md:h-full md:w-full" />
+        <div className="hidden lg:block absolute bottom-[420px] left-[20%] xl:left-[400px] transform -translate-x-1/2">
+          <img src={Nft6} alt="" className="h-16 w-20 xl:h-full xl:w-full" />
           <p className="text-center text-white text-xs font-sora mt-1">
             1.254 ETH
           </p>
@@ -180,30 +189,33 @@ export default function Home() {
 
       <div
         id="about"
-        className="mt-4 h-auto md:h-[800px] grid grid-col-1 md:grid-cols-2 justify-center items-center mx-auto w-[90%] md:w-[1100px]"
+        className="mt-8 h-auto lg:h-[800px] grid grid-cols-1 lg:grid-cols-2 justify-center items-center mx-auto w-full max-w-6xl px-4 gap-8"
       >
-        <div className="sm:w-full flex flex-col justify-end md:w-[80%] leading-10 sm:mx-auto p-2">
-          <h1 className="uppercase text-lg text-slate-400 text-start font-bold">
+        <div className="w-full flex flex-col justify-end lg:w-[80%] leading-8 lg:leading-10 mx-auto p-4">
+          <h1 className="uppercase text-sm sm:text-lg text-slate-400 text-start font-bold">
             Overline
           </h1>
-          <p className="text-[30px] md:text-[50px] mt-4 text-white">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-4 text-white">
             Sapien ipsum scelerisque convallis fusce
           </p>
-          <p className="text-sm text-slate-200 mt-2">
-            Ut amet vulputate faucibus vitae semper eget auctor. <br /> Diam
-            tempor pulvinar ultricies dolor feugiat aliquam commodo.
+          <p className="text-sm sm:text-base text-slate-200 mt-2">
+            Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor
+            pulvinar ultricies dolor feugiat aliquam commodo.
           </p>
-          <div className="flex items-center mt-7 gap-2">
-            <button className="text-white text-xs p-2 rounded-md inset-shadow-[#4745D0] bg-[#4745D0] rounded-lg w-32">
+          <div className="flex flex-col sm:flex-row items-center mt-7 gap-3 sm:gap-2">
+            <button className="text-white text-xs sm:text-sm p-3 sm:p-2 rounded-lg inset-shadow-[#4745D0] bg-[#4745D0] w-full sm:w-32 hover:bg-[#3a37b8] transition-colors">
               Get Started
             </button>
-            <button className="border-2 border-border w-32 text-xs flex items-center justify-center p-2 text-slate-200 rounded-lg">
+            <button className="border-2 border-border w-full sm:w-32 text-xs sm:text-sm flex items-center justify-center p-3 sm:p-2 text-slate-200 rounded-lg hover:bg-gray-800 transition-colors">
               Learn more
             </button>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full md:w-[90%]">
-          <img src={rightImage} className="w-full h-auto" />
+        <div className="flex items-center justify-center w-full lg:w-[90%]">
+          <img
+            src={rightImage}
+            className="w-full h-auto max-w-md lg:max-w-none"
+          />
         </div>
       </div>
 

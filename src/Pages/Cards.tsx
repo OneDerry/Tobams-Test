@@ -96,32 +96,38 @@ export default function NFTMarket({ showHeader = true }) {
       )}
 
       <div className="relative w-full flex overflow-hidden justify-center">
-        <div className="grid md:grid-cols-3 gap-2 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-2 overflow-hidden max-w-6xl">
           {cards.slice(currentIndex, currentIndex + 3).map((card) => (
             <div
               key={card.id}
-              className="bg-[#060714] p-4 overflow-hidden rounded-lg shadow-lg w-[300px] border border-border"
+              className="bg-[#060714] p-3 sm:p-4 overflow-hidden rounded-lg shadow-lg w-full max-w-sm mx-auto sm:max-w-none border border-border"
             >
               <img
                 src={card.image}
                 alt={card.name}
-                className="rounded-lg w-full h-[300px] object-cover "
+                className="rounded-lg w-full h-[200px] sm:h-[250px] lg:h-[300px] object-cover"
               />
-              <h2 className="text-white mt-3 font-semibold">{card.name}</h2>
+              <h2 className="text-white mt-3 font-semibold text-sm sm:text-base">
+                {card.name}
+              </h2>
               <div className="flex items-center justify-between text-gray-400 text-xs mt-2">
                 <div className="flex items-center gap-1">
-                  <LuTimer size={15} />{" "}
-                  <span>{formatTime(seconds)} min left</span>
+                  <LuTimer size={12} className="sm:w-4 sm:h-4" />
+                  <span className="text-xs">
+                    {formatTime(seconds)} min left
+                  </span>
                 </div>
-                <span className="text-[#2A2769] p-1 rounded-md bg-[#807cfc] bg-opacity-100">
+                <span className="text-[#2A2769] p-1 rounded-md bg-[#807cfc] bg-opacity-100 text-xs">
                   3.19 ETH
                 </span>
               </div>
-              <div className="border border-border mt-5"></div>
+              <div className="border border-border mt-3 sm:mt-5"></div>
               <div className="mt-2 flex items-center justify-between">
-                <p className="text-gray-500 text-sm">35 people are bidding</p>
+                <p className="text-gray-500 text-xs sm:text-sm">
+                  35 people are bidding
+                </p>
                 <div className="flex items-center gap-2">
-                  <GoHeart size={20} fill="red" />
+                  <GoHeart size={16} className="sm:w-5 sm:h-5" fill="red" />
                   <span className="text-xs text-white ml-1">120</span>
                 </div>
               </div>
@@ -132,7 +138,7 @@ export default function NFTMarket({ showHeader = true }) {
 
       <button
         onClick={handleNext}
-        className="relative bottom-[300px] left-[100px] mt-5 bg-gray-500 p-3 rounded-full text-white shadow-md hover:bg-gray-700 transition ease-in-out"
+        className="hidden lg:block absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 p-3 rounded-full text-white shadow-md hover:bg-gray-700 transition ease-in-out z-10"
       >
         <FaChevronRight />
       </button>
